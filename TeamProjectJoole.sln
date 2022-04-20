@@ -4,12 +4,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamProjectJoole", "TeamProjectJoole\TeamProjectJoole.csproj", "{6EE7A81D-960E-4B13-9F3D-A84813A1DDE3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84742BD8-1FA1-42A1-948F-7DFE5FF71147} = {84742BD8-1FA1-42A1-948F-7DFE5FF71147}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joole.Data", "Joole.Data\Joole.Data.csproj", "{606541A3-4CF2-4A89-88B7-6BEB77916132}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joole.Service", "Joole.Service\Joole.Service.csproj", "{84742BD8-1FA1-42A1-948F-7DFE5FF71147}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3B5601A-CFD3-4C27-B53D-9B9FCC331963} = {A3B5601A-CFD3-4C27-B53D-9B9FCC331963}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joole.Repo", "Joole.Repo\Joole.Repo.csproj", "{A3B5601A-CFD3-4C27-B53D-9B9FCC331963}"
+	ProjectSection(ProjectDependencies) = postProject
+		{606541A3-4CF2-4A89-88B7-6BEB77916132} = {606541A3-4CF2-4A89-88B7-6BEB77916132}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

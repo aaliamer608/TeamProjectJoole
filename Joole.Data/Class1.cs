@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Joole.Data
 {
-    public class Class1
+    public class ClassData
     {
+
+
+
     }
 }
