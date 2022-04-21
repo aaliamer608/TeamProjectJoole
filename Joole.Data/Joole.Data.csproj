@@ -46,6 +46,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,11 +57,72 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Data\JooleDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\JooleDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\JooleDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblCategory.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblFeedback.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblProduct.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblProperty.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblPropertyValue.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblSubCategory.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblTypeFilter.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblUser.cs">
+      <DependentUpon>JooleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Data\JooleDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JooleDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\JooleDB.edmx.diagram">
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\JooleDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\JooleDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

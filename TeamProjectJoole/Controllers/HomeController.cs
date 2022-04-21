@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-
 using AutoMapper;
+using TeamProjectJoole.Models;
+using Joole.Service;
 
 namespace TeamProjectJoole.Controllers
 {
@@ -47,7 +47,35 @@ namespace TeamProjectJoole.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            var result = new ProductServices().getAllProducts();
+            ProductInfoVM productInfoVM = new ProductInfoVM();
+            ProductInfoVM productInfoVM2 = new ProductInfoVM();
+            List<ProductInfoVM> productList = new List<ProductInfoVM>();
+
+            productInfoVM.ProductIDs = 101;
+            productInfoVM.Product_Name = "Wall";
+
+            productList.Add(productInfoVM);
+
+            productInfoVM2.ProductIDs = 202;
+            productInfoVM2.Product_Name = "Floor";
+
+            productList.Add(productInfoVM2);
+            //foreach (var item in productInfoVM)
+            //{ 
+
+            //}
+
+            foreach(var item in result)
+            {
+                ProductInfoVM vm = new ProductInfoVM();
+                vm.ProductIDs = item.Product_ID;
+                vm.Product_Name = item.Product_Name;
+                productList.Add(vm);
+            }
+
+            return View("Create", productList);
+
         }
 
     }

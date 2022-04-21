@@ -9,9 +9,21 @@ namespace Joole.Service.Models
 {
     class ProductsService
     {
+
         public ProductsService()
-        { 
+        {
             
         }
+        //public UnitOfWork
+
+        //public ProductsService()
+        //{ 
+         
+        //}
+
+        //public IEnumerable<ProducInfoDTO> ProducInfoByID(int id)
+        //{ 
+        //    var name = 
+        //}
     }
 }
