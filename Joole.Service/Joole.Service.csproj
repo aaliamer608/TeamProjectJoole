@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\FeedbackServices.cs" />
     <Compile Include="Models\CategoryServices.cs" />
     <Compile Include="Models\ProductServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

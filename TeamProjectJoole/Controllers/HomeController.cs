@@ -64,5 +64,25 @@ namespace TeamProjectJoole.Controllers
             return View("Categories", categoryList);
 
         }
+
+
+        public ActionResult Feedback()
+        {
+
+            var result = new FeedbackServices().getAllProducts();
+            List<FeedbackInfoVM> feedbackList = new List<FeedbackInfoVM>();
+
+            foreach (var item in result)
+            {
+                FeedbackInfoVM feedbackVM = new FeedbackInfoVM();
+                feedbackVM.Feedback_ID = item.FeedBack_ID;
+                feedbackVM.Feedback_Content= item.FeedBack_Content;
+
+                feedbackList.Add(feedbackVM);
+            }
+
+            return View("Feedback", feedbackList);
+        }
+
     }
 }
