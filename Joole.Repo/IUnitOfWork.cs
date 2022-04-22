@@ -1,17 +1,16 @@
-﻿using Joole.Data;
+﻿using Joole.Repo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace Joole.Repo
 {
-    public class Class1
+    public partial interface IUnitOfWork : IDisposable
     {
-        ClassData thing = new ClassData();
+        IUsersRepository Users { get; }
 
+        int Complete();
     }
 }
