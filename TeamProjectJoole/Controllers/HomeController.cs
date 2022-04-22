@@ -11,16 +11,6 @@ namespace TeamProjectJoole.Controllers
 {
     public class HomeController : Controller
     {
-
-        //MapperConfiguration config;
-        //IMapper mapper;
-        //ProductsService productService;
-
-        //public HomeController()
-        //{
-        //    productService = new ProductsService();
-        //}
-
         public ActionResult Index()
         {
             return View();
@@ -42,41 +32,37 @@ namespace TeamProjectJoole.Controllers
 
         public ActionResult Products()
         {
-            return View();
-        }
 
-        public ActionResult Create()
-        {
             var result = new ProductServices().getAllProducts();
-            ProductInfoVM productInfoVM = new ProductInfoVM();
-            ProductInfoVM productInfoVM2 = new ProductInfoVM();
             List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
-            productInfoVM.ProductIDs = 101;
-            productInfoVM.Product_Name = "Wall";
+            foreach (var item in result)
+            {
+                ProductInfoVM productVM = new ProductInfoVM();
+                productVM.ProductID = item.Product_ID;
+                productVM.Product_Name = item.Product_Name;
 
-            productList.Add(productInfoVM);
+                productList.Add(productVM);
+            }
 
-            productInfoVM2.ProductIDs = 202;
-            productInfoVM2.Product_Name = "Floor";
+            return View("Products", productList);
+        }
 
-            productList.Add(productInfoVM2);
-            //foreach (var item in productInfoVM)
-            //{ 
-
-            //}
+        public ActionResult Categories()
+        {
+            var result = new CategoryServices().getAllProducts();
+            List<CategoryInfoVM> categoryList = new List<CategoryInfoVM>();
 
             foreach(var item in result)
             {
-                ProductInfoVM vm = new ProductInfoVM();
-                vm.ProductIDs = item.Product_ID;
-                vm.Product_Name = item.Product_Name;
-                productList.Add(vm);
+                CategoryInfoVM vm = new CategoryInfoVM();
+                vm.CategoryID = item.Category_ID;
+                vm.Category_Name = item.Category_Name;
+                categoryList.Add(vm);
             }
 
-            return View("Create", productList);
+            return View("Categories", categoryList);
 
         }
-
     }
 }

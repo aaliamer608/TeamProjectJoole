@@ -17,7 +17,7 @@ namespace Joole.Repo.Repositories
         }
 
 
-        public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
+    //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

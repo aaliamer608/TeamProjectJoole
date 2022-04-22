@@ -19,21 +19,9 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="form-group">
 
-    @Html.DisplayNameFor(Model => Model.ProductIDs)
+    @Html.DisplayNameFor(Model => Model.ProductID)
     @Html.DisplayNameFor(Model => Model.Product_Name)
 
-
-
-
-    @foreach (var item in Model)
-    {
-    <p>
-        @Html.DisplayFor(Model => item.ProductIDs)
-        @Html.DisplayFor(Model => item.Product_Name)
-
-        @*@Html.DisplayForModel(item.Product_Name)*@
-    </p>
-    }
 
 
 
