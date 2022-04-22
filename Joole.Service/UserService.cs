@@ -17,8 +17,8 @@ namespace Joole.Service
 
         public UserService()
         {
-            this.uow = new UnitOfWork(jooleDBEntities);
             this.jooleDBEntities = new JooleDBEntities();
+            this.uow = new UnitOfWork(jooleDBEntities);
         }
 
         public void UserSignup(UserDTO userDTO)

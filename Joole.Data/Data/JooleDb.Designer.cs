@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\바탕화면\입사 지원\Itlize training\training_git\.NET\TeamProjectJoole\Joole.Data\Data\JooleDb.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\luis\source\repos\TeamProjectJoole\Joole.Data\Data\JooleDb.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

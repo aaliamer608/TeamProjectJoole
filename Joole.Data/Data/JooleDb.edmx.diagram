@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c025c4265c344916b6b18f8ac3408e89" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="e322b1bd5d2048d5866ba5fc6c8eceef" Name="Diagram1">
         <EntityTypeShape EntityType="JooleDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="JooleDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="JooleDBModel.tblFeedback" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />

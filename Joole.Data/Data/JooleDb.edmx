@@ -80,9 +80,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
+          <Property Name="User_ID" Type="int" Nullable="false" />
           <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="User_Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_tblFeedback_tblProducts">
           <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
@@ -287,9 +287,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Key>
             <PropertyRef Name="User_ID" />
           </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblFeedbacks" Relationship="Self.FK_tblFeedback_tblUsers" FromRole="tblUsers" ToRole="tblFeedback" />
         </EntityType>
         <EntityType Name="tblPropertyValue">
@@ -500,9 +500,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <EntitySetMapping Name="tblUsers">
             <EntityTypeMapping TypeName="JooleDBModel.tblUser">
               <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
                 <ScalarProperty Name="User_Name" ColumnName="User_Name" />
                 <ScalarProperty Name="User_Password" ColumnName="User_Password" />
-                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
