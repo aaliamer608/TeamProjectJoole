@@ -9,6 +9,7 @@ using Joole.Service;
 
 namespace TeamProjectJoole.Controllers
 {
+    //This is different
     public class HomeController : Controller
     {
         public ActionResult Index()
