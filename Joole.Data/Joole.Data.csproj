@@ -56,59 +56,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Data\JooleDb.Context.cs">
+    <Compile Include="Data\JooleDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDb.Context.tt</DependentUpon>
+      <DependentUpon>JooleDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\JooleDb.cs">
+    <Compile Include="Data\JooleDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\JooleDb.Designer.cs">
+    <Compile Include="Data\JooleDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDb.edmx</DependentUpon>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\sysdiagram.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblCategory.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblFeedback.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblProduct.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblProperty.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblPropertyValue.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblSubCategory.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblTypeFilter.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblUser.cs">
-      <DependentUpon>JooleDb.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Data\JooleDb.edmx">
+    <EntityDeploy Include="Data\JooleDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>JooleDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>JooleDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\JooleDb.edmx.diagram">
-      <DependentUpon>JooleDb.edmx</DependentUpon>
+    <None Include="Data\JooleDB.edmx.diagram">
+      <DependentUpon>JooleDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -116,15 +115,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\JooleDb.Context.tt">
+    <Content Include="Data\JooleDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JooleDb.edmx</DependentUpon>
-      <LastGenOutput>JooleDb.Context.cs</LastGenOutput>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\JooleDb.tt">
+    <Content Include="Data\JooleDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JooleDb.edmx</DependentUpon>
-      <LastGenOutput>JooleDb.cs</LastGenOutput>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
