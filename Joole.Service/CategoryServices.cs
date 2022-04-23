@@ -1,4 +1,5 @@
 ﻿using Joole.Data.Data;
+using Joole.Repo;
 using Joole.Repo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Joole.Service
 {
-    
-
    public  class CategoryServices
     {
-        JooleDBEntities _context;
+        public UnitOfWork uow { get; set; }
+        public JooleDBEntities _context;
+
         GenericRepository<tblCategory> genRepo;
         public CategoryServices()
         {
@@ -23,11 +24,22 @@ namespace Joole.Service
         }
 
 
-        public List<tblCategory> getAllProducts() 
-        {
-            
+        //public List<tblCategory> getAllProducts() 
+        //{
 
-            return genRepo.GetAll().ToList();
+
+        //    return genRepo.GetAll().ToList();
+        //}
+
+        public List<tblCategory> getAllProducts()
+        {
+            tblCategory obj = new tblCategory()
+            {
+
+            };
+            var res = uow.Categories.GetAll();
+            uow.Complete();
+            return (List<tblCategory>)res;
         }
     }
 }

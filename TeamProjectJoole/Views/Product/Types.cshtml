@@ -1,8 +1,8 @@
-﻿@model IEnumerable<TeamProjectJoole.Models.TypeFilterInfoVM>
+﻿@model IEnumerable<TeamProjectJoole.Models.CategoryInfoVM>
 
 
 @{
-    ViewBag.Title = "Types";
+    ViewBag.Title = "Categories";
 }
 
 <h2>Types</h2>
@@ -16,8 +16,8 @@
 
         <tr>
             <td>
-                @Html.DisplayFor(Model => item.Property_ID)
-                @Html.DisplayFor(Model => item.Type_name)
+                @Html.DisplayFor(Model => item.CategoryID)
+                @Html.DisplayFor(Model => item.Category_Name)
 
                 @*@Html.DisplayForModel(item.Product_Name)*@
             </td>

@@ -9,22 +9,33 @@ using Joole.Service;
 
 using Joole.Service.Models;
 using System.Web.Security;
-
-
+using Joole.Data.Data;
 
 namespace TeamProjectJoole.Controllers
 {
     public class ProductController : Controller
     {
-        public ActionResult Index()
+        MapperConfiguration config;
+        IMapper mapper;
+        ProductServices productsService;
+        CategoryServices categoryService;
+
+        public ProductController()
         {
-            return View();
+            productsService = new ProductServices();
+            config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<ProductDTO, ProductInfoVM>();
+                cfg.CreateMap<CategoryDTO, CategoryInfoVM>();
+            }
+            );
+            mapper = config.CreateMapper();
         }
 
         public ActionResult Products()
         {
 
-            var result = new ProductServices().getAllProducts();
+            var result = productsService.getAllProducts();
             List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
             foreach (var item in result)
@@ -41,7 +52,10 @@ namespace TeamProjectJoole.Controllers
 
         public ActionResult Categories()
         {
-            var result = new CategoryServices().getAllProducts();
+            categoryService = new CategoryServices();
+            //var result = new CategoryServices().getAllProducts();
+            var result = categoryService.getAllProducts();
+
             List<CategoryInfoVM> categoryList = new List<CategoryInfoVM>();
 
             foreach(var item in result)
@@ -52,8 +66,10 @@ namespace TeamProjectJoole.Controllers
                 categoryList.Add(vm);
             }
 
-            return View("Categories", categoryList);
+            IEnumerable<CategoryInfoVM> categoryEn = categoryList;
 
+
+            return View("Types", categoryEn);
         }
 
 
@@ -76,23 +92,49 @@ namespace TeamProjectJoole.Controllers
         }
 
 
-        public ActionResult Types()
+        //public ActionResult Types()
+        //{
+
+        //    var result = new TypeFilterServices().getAllProducts();
+        //    List<TypeFilterInfoVM> typeFilterList = new List<TypeFilterInfoVM>();
+
+        //    foreach (var item in result)
+        //    {
+        //        TypeFilterInfoVM typeFilterVM = new TypeFilterInfoVM();
+        //        typeFilterVM.Property_ID = (int)item.Property_ID;
+        //        typeFilterVM.Type_name= item.Type_name;
+
+        //        typeFilterList.Add(typeFilterVM);
+        //    }
+
+        //    return View("Types", typeFilterList);
+        //}
+
+        public ActionResult Create()
         {
-
-            var result = new TypeFilterServices().getAllProducts();
-            List<TypeFilterInfoVM> typeFilterList = new List<TypeFilterInfoVM>();
-
-            foreach (var item in result)
-            {
-                TypeFilterInfoVM typeFilterVM = new TypeFilterInfoVM();
-                typeFilterVM.Property_ID = (int)item.Property_ID;
-                typeFilterVM.Type_name= item.Type_name;
-
-                typeFilterList.Add(typeFilterVM);
-            }
-
-            return View("Types", typeFilterList);
+            return View();
         }
 
+        [HttpPost]
+        public ActionResult Create(ProductInfoVM model)
+        {
+            var res = new ProductServices();
+            if (ModelState.IsValid)
+            {
+                
+                res.productAdd(new ProductDTO
+                {
+                    ProductId = model.ProductID,
+                    Product_Name = model.Product_Name
+                });
+            }
+            //productsService = new ProductServices();
+            //productsService.productAdd(new ProductDTO
+            //{
+            //    ProductId = model.ProductID,
+            //    Product_Name = model.Product_Name
+            //});
+            return RedirectToAction("Products");
+        }
     }
 }

@@ -54,10 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CategoryServices.cs" />
+    <Compile Include="CategoryServices.cs" />
+    <Compile Include="Models\CategoryDTO.cs" />
     <Compile Include="Models\TypeFilterServices.cs" />
     <Compile Include="Models\FeedbackServices.cs" />
-    <Compile Include="Models\ProductServices.cs" />
+    <Compile Include="ProductServices.cs" />
+    <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Models\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService.cs" />

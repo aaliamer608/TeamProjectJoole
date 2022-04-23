@@ -10,6 +10,9 @@ namespace Joole.Repo
     public partial interface IUnitOfWork : IDisposable
     {
         IUsersRepository Users { get; }
+        IProductsRepository Products { get; }
+        ICategoriesRepository Categories { get; }
+        //ITypeFilterRepository TypeFilter { get; }
 
         int Complete();
     }

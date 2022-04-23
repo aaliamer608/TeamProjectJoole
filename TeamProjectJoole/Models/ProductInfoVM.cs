@@ -13,7 +13,7 @@ namespace TeamProjectJoole.Models
 
 
 
-        //public List<ProductInfoVM> productList = new List<ProductInfoVM>();
+        public List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
     }
 }
