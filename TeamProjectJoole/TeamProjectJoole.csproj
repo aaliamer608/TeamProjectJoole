@@ -128,11 +128,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TypeFilterInfoVM.cs" />
+    <Compile Include="Models\CategoryInfoVM.cs" />
+    <Compile Include="Models\FeedbackInfoVM.cs" />
+    <Compile Include="Models\ProductInfoVM.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +179,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Signup.cshtml" />
+    <Content Include="Views\Product\Types.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Feedback.cshtml" />
+    <Content Include="Views\Product\Products.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -192,6 +202,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Joole.Data\Joole.Data.csproj">
+      <Project>{606541A3-4CF2-4A89-88B7-6BEB77916132}</Project>
+      <Name>Joole.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Joole.Service\Joole.Service.csproj">
       <Project>{84742bd8-1fa1-42a1-948f-7dfe5ff71147}</Project>
       <Name>Joole.Service</Name>
