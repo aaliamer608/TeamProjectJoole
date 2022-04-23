@@ -31,59 +31,59 @@ namespace TeamProjectJoole.Controllers
             return View();
         }
 
-        public ActionResult Products()
-        {
+        //public ActionResult Products()
+        //{
 
-            var result = new ProductServices().getAllProducts();
-            List<ProductInfoVM> productList = new List<ProductInfoVM>();
+        //    var result = new ProductServices().getAllProducts();
+        //    List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
-            foreach (var item in result)
-            {
-                ProductInfoVM productVM = new ProductInfoVM();
-                productVM.ProductID = item.Product_ID;
-                productVM.Product_Name = item.Product_Name;
+        //    foreach (var item in result)
+        //    {
+        //        ProductInfoVM productVM = new ProductInfoVM();
+        //        productVM.ProductID = item.Product_ID;
+        //        productVM.Product_Name = item.Product_Name;
 
-                productList.Add(productVM);
-            }
+        //        productList.Add(productVM);
+        //    }
 
-            return View("Products", productList);
-        }
+        //    return View("Products", productList);
+        //}
 
-        public ActionResult Categories()
-        {
-            var result = new CategoryServices().getAllProducts();
-            List<CategoryInfoVM> categoryList = new List<CategoryInfoVM>();
+        //public ActionResult Categories()
+        //{
+        //    var result = new CategoryServices().getAllProducts();
+        //    List<CategoryInfoVM> categoryList = new List<CategoryInfoVM>();
 
-            foreach(var item in result)
-            {
-                CategoryInfoVM vm = new CategoryInfoVM();
-                vm.CategoryID = item.Category_ID;
-                vm.Category_Name = item.Category_Name;
-                categoryList.Add(vm);
-            }
+        //    foreach(var item in result)
+        //    {
+        //        CategoryInfoVM vm = new CategoryInfoVM();
+        //        vm.CategoryID = item.Category_ID;
+        //        vm.Category_Name = item.Category_Name;
+        //        categoryList.Add(vm);
+        //    }
 
-            return View("Categories", categoryList);
+        //    return View("Categories", categoryList);
 
-        }
+        //}
 
 
-        public ActionResult Feedback()
-        {
+        //public ActionResult Feedback()
+        //{
 
-            var result = new FeedbackServices().getAllProducts();
-            List<FeedbackInfoVM> feedbackList = new List<FeedbackInfoVM>();
+        //    var result = new FeedbackServices().getAllProducts();
+        //    List<FeedbackInfoVM> feedbackList = new List<FeedbackInfoVM>();
 
-            foreach (var item in result)
-            {
-                FeedbackInfoVM feedbackVM = new FeedbackInfoVM();
-                feedbackVM.Feedback_ID = item.FeedBack_ID;
-                feedbackVM.Feedback_Content= item.FeedBack_Content;
+        //    foreach (var item in result)
+        //    {
+        //        FeedbackInfoVM feedbackVM = new FeedbackInfoVM();
+        //        feedbackVM.Feedback_ID = item.FeedBack_ID;
+        //        feedbackVM.Feedback_Content= item.FeedBack_Content;
 
-                feedbackList.Add(feedbackVM);
-            }
+        //        feedbackList.Add(feedbackVM);
+        //    }
 
-            return View("Feedback", feedbackList);
-        }
+        //    return View("Feedback", feedbackList);
+        //}
 
     }
 }

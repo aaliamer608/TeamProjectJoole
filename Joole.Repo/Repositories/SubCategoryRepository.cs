@@ -11,7 +11,7 @@ namespace Joole.Repo.Repositories
 
     public class SubCategoryRepository : GenericRepository<tblSubCategory>, ISubCategoryRepository
     {
-        public SubCategoryRepository(JooleDBEntities productsDBEntities) : base(productsDBEntities) 
+        public SubCategoryRepository(JooleDBEntities jooleDBEntities) : base(jooleDBEntities) 
         { 
 
         }

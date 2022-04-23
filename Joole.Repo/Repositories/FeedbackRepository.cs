@@ -11,7 +11,7 @@ namespace Joole.Repo.Repositories
 
     public class FeedbackRepository : GenericRepository<tblFeedback>, IFeedbackRepository
     {
-        public FeedbackRepository(JooleDBEntities productsDBEntities) : base(productsDBEntities) 
+        public FeedbackRepository(JooleDBEntities jooleDBEntities) : base(jooleDBEntities) 
         { 
 
         }

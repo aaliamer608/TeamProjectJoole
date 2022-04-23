@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CategoryServices.cs" />
+    <Compile Include="Models\TypeFilterServices.cs" />
     <Compile Include="Models\FeedbackServices.cs" />
     <Compile Include="Models\ProductServices.cs" />
     <Compile Include="Models\UserDTO.cs" />

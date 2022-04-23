@@ -1,0 +1,26 @@
+﻿@model IEnumerable<TeamProjectJoole.Models.ProductInfoVM>
+
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+
+<table>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => item.ProductID)
+                @Html.DisplayFor(Model => item.Product_Name)
+
+                @*@Html.DisplayForModel(item.Product_Name)*@
+            </td>
+        </tr>
+    }
+</table>

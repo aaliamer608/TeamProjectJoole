@@ -9,9 +9,9 @@ using Joole.Data.Data;
 namespace Joole.Repo.Repositories
 {
 
-    public class ProductsRepository : GenericRepository<tblProduct>, IProductsRepository
+    public class TypeFilterRepository : GenericRepository<tblTypeFilter>, ITypeFilterRepository
     {
-        public ProductsRepository(JooleDBEntities jooleDBEntities) : base(jooleDBEntities) 
+        public TypeFilterRepository(JooleDBEntities jooleDBEntities) : base(jooleDBEntities) 
         { 
 
         }
