@@ -1,4 +1,41 @@
-﻿@model IEnumerable<TeamProjectJoole.Models.ProductInfoVM>
+﻿@*@model IEnumerable<TeamProjectJoole.Models.ProductInfoVM>
+
+
+    @{
+        ViewBag.Title = "Products";
+    }
+
+    <h2>Products</h2>
+
+
+    <table>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>*@
+
+
+
+@model IEnumerable<TeamProjectJoole.Models.ProductInfoVM>
 
 
 @{
@@ -8,27 +45,58 @@
 <h2>Products</h2>
 
 
-<table>
-
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product_Name)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>*@
-        </tr>
+<style>
+    a.pclass {
+        color: #ff0000
     }
-</table>
+
+    a.p-class:active {
+        color: #0e86f8
+    }
+
+    a.p-class:link {
+        color: black
+    }
+
+    a.p-class:hover {
+        color: black
+    }
+
+    a.p-class:visited {
+        color: black
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-3" style="background-color:green;padding-bottom:10px;padding-top:10px;">
+        <form>
+        </form>
+    </div>
+</div>
+
+@*Product Display*@
+<div class="col-md-12">
+    <form style=" padding:5px">
+        @foreach (var item in Model)
+        {
+            <div id="@Html.DisplayFor(Model => item.ProductID)" style="float:left;margin-left:10px;margin-top:10px;border: 3px solid gray; text-align: center; display: inline-block; width: 200px; height: 400px;" onclick="myFunction(this)">
+                <img src="" style="width:80px;height:60px">
+                <br />
+                <b> @Html.ActionLink("" + @Html.DisplayFor(Model => item.Product_Name) + "", "", "", new { id = @Html.DisplayFor(Model => item.ProductID) }, new { @class = "p-class" })</b>
+                <br />
+
+                <input type="checkbox" name="compare" value=@Html.DisplayFor(Model => item.ProductID) /> <b>Compare</b>
+                <input class="btn btn-primary" type="submit" value="Add to">
+            </div>
+            /*
+            <tr>
+                <td>
+                    @Html.DisplayFor(Model => item.ProductID)
+                    @Html.DisplayFor(Model => item.Product_Name)
+                    @*@Html.DisplayForModel(item.Product_Name)*@
+                </td>
+             </tr>
+            */
+        }
+    </form>
+</div>

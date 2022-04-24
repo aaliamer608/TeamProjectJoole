@@ -60,5 +60,28 @@ namespace Joole.Service
             uow.Complete();
             return (List<tblProduct>)res;
         }
+
+
+        public IEnumerable<ProductDTO> getProductByID(int id)
+        {
+
+            tblProduct obj = new tblProduct()
+            {
+
+            };
+
+            var products = uow.Products.GetAll();
+
+            var result = (
+                from p in products
+                where p.Product_ID == id
+                select new ProductDTO
+                {
+                    ProductId = p.Product_ID
+                }).ToList();
+            var res = uow.Products.GetAll();
+            uow.Complete();
+            return (result);
+        }
     }
 }
