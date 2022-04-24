@@ -32,6 +32,24 @@ namespace TeamProjectJoole.Controllers
             mapper = config.CreateMapper();
         }
 
+        public ActionResult Index(int id)
+        {
+            var result = productsService.getProductByID(id);
+            List<ProductInfoVM> productList = new List<ProductInfoVM>();
+
+            foreach (var item in result)
+            {
+                ProductInfoVM productVM = new ProductInfoVM();
+             //   productVM.ProductID = item.Product_ID;
+                productVM.Product_Name = item.Product_Name;
+
+                productList.Add(productVM);
+            }
+
+            return View(productList);
+        }
+
+
         public ActionResult Products()
         {
 

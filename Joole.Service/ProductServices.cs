@@ -52,10 +52,10 @@ namespace Joole.Service
 
         public List<tblProduct> getAllProducts()
         {
-            tblProduct obj = new tblProduct()
-            {
+            //tblProduct obj = new tblProduct()
+            //{
 
-            };
+            //};
             var res = uow.Products.GetAll();
             uow.Complete();
             return (List<tblProduct>)res;
@@ -64,24 +64,35 @@ namespace Joole.Service
 
         public IEnumerable<ProductDTO> getProductByID(int id)
         {
-
-            tblProduct obj = new tblProduct()
-            {
-
-            };
-
-            var products = uow.Products.GetAll();
+            var product = uow.Products.GetAll();
 
             var result = (
-                from p in products
+                from p in product
                 where p.Product_ID == id
                 select new ProductDTO
                 {
-                    ProductId = p.Product_ID
-                }).ToList();
-            var res = uow.Products.GetAll();
+                    ProductId = p.Product_ID,
+                    Product_Name = p.Product_Name
+                }
+                ).ToList();
+
             uow.Complete();
-            return (result);
+
+            return result;
         }
+
+        //public List<ProductDTO> getProductByID(int id)
+        //{
+        //    var products = uow.Products.GetAll();
+
+        //    var result = (
+        //        from p in products
+        //        where p.Product_ID == id
+        //        select products
+        //        ).ToList();
+        //    var res = uow.Products.GetById(id);
+        //    //uow.Complete();
+        //    return res;
+        //}
     }
 }
