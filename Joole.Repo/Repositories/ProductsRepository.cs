@@ -21,7 +21,7 @@ namespace Joole.Repo.Repositories
 
 
 
-            throw new NotImplementedException();  // customs logic here to get st
+            throw new NotImplementedException();  // customs logic here
         }
 
 
