@@ -16,8 +16,16 @@ namespace Joole.Repo.Repositories
 
         }
 
+        public IEnumerable<tblProduct> GetProductsBySubCategoryID(int SubId)
+        {
 
-    //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
+
+
+            throw new NotImplementedException();  // customs logic here
+        }
+
+
+        //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

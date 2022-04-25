@@ -40,16 +40,18 @@ namespace TeamProjectJoole.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(UserModel model)
         {
            
             UserDTO userDTO = userService.UserLogin(model.UserName, model.UserPassword);
-            if (!string.IsNullOrEmpty(userDTO.UserName))
+
+            if (userDTO != null)
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Product");
             }
-            ModelState.AddModelError("", "invalid User name or Password");
+            ModelState.AddModelError("loginFail", "Invalid user name or password");
             return View();
         }
 
@@ -63,7 +65,7 @@ namespace TeamProjectJoole.Controllers
         {
             userService.UserSignup(new UserDTO
             {
-                UserId = model.Id,
+                //UserId = model.UserId,
                 UserName = model.UserName,
                 UserPassword = model.UserPassword
             });

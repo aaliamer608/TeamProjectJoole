@@ -25,7 +25,7 @@ namespace Joole.Service
         {
             tblUser obj = new tblUser()
             {
-                User_ID = userDTO.UserId,
+                //User_ID = userDTO.UserId,
                 User_Name = userDTO.UserName,
                 User_Password = userDTO.UserPassword
 
@@ -47,7 +47,7 @@ namespace Joole.Service
                 {
                     userDTO = new UserDTO()
                     {
-                        UserId = user.User_ID,
+                        //UserId = user.User_ID,
                         UserName = user.User_Name,
                         UserPassword = user.User_Password
                     };

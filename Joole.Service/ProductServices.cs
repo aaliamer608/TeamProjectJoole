@@ -41,7 +41,7 @@ namespace Joole.Service
         {
             tblProduct obj = new tblProduct()
             {
-                Product_ID = productDTO.ProductId,
+                //Product_ID = productDTO.ProductId,
                 Product_Name = productDTO.Product_Name
 
             };
@@ -71,7 +71,7 @@ namespace Joole.Service
                 where p.Product_Name.Equals(name, StringComparison.OrdinalIgnoreCase)
                 select new ProductDTO
                 {
-                    ProductId = p.Product_ID,
+                    //ProductId = p.Product_ID,
                     Product_Name = p.Product_Name
                 }
                 ).ToList();

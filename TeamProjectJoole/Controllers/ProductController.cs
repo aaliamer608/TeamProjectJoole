@@ -150,7 +150,7 @@ namespace TeamProjectJoole.Controllers
                 
                 res.productAdd(new ProductDTO
                 {
-                    ProductId = model.ProductID,
+                    //ProductId = model.ProductID,
                     Product_Name = model.Product_Name
                 });
             }
