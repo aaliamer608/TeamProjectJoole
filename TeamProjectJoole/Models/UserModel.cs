@@ -11,8 +11,12 @@ namespace TeamProjectJoole.Models
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //[Key]
-        public int Id { get; set; }
+        //public int UserId { get; set; }
+        [Required(ErrorMessage = "Please provide user name", AllowEmptyStrings = false)]
         public string UserName { get; set; }
+
+        [Required(ErrorMessage = "Please provide password", AllowEmptyStrings = false)]
+        [DataType(DataType.Password)]
         public string UserPassword { get; set; }
     }
 }

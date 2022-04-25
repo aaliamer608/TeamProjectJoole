@@ -20,10 +20,9 @@ namespace Joole.Data.Data
             this.tblFeedbacks = new HashSet<tblFeedback>();
         }
     
-        //public int User_ID { get; set; }
+        public int User_ID { get; set; }
         public string User_Name { get; set; }
         public string User_Password { get; set; }
-        public int User_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblFeedback> tblFeedbacks { get; set; }
