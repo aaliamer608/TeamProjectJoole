@@ -32,9 +32,17 @@ namespace TeamProjectJoole.Controllers
             mapper = config.CreateMapper();
         }
 
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
-            var result = productsService.getProductByID(id);
+            List<ProductInfoVM> productList = new List<ProductInfoVM>();
+
+            return View("Products", productList);
+        }
+
+        public ActionResult Search(string searchString)
+        {
+            //string name = "hammer";
+            var result = productsService.getProductByName(searchString);
             List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
             foreach (var item in result)
@@ -46,9 +54,8 @@ namespace TeamProjectJoole.Controllers
                 productList.Add(productVM);
             }
 
-            return View(productList);
+            return View("Search", productList);
         }
-
 
         public ActionResult Products()
         {
@@ -67,6 +74,7 @@ namespace TeamProjectJoole.Controllers
 
             return View("Products", productList);
         }
+
 
         public ActionResult Categories()
         {

@@ -62,13 +62,13 @@ namespace Joole.Service
         }
 
 
-        public IEnumerable<ProductDTO> getProductByID(int id)
+        public IEnumerable<ProductDTO> getProductByName(string name)
         {
             var product = uow.Products.GetAll();
 
             var result = (
                 from p in product
-                where p.Product_ID == id
+                where p.Product_Name.Equals(name, StringComparison.OrdinalIgnoreCase)
                 select new ProductDTO
                 {
                     ProductId = p.Product_ID,
