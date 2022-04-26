@@ -24,8 +24,10 @@ namespace Joole.Data.Data
         public int Product_ID { get; set; }
         public string Product_Name { get; set; }
         public string Product_Image { get; set; }
-        public Nullable<int> SubCategory_ID { get; set; }
+        public int SubCategory_ID { get; set; }
+        public int Category_ID { get; set; }
     
+        public virtual tblCategory tblCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblFeedback> tblFeedbacks { get; set; }
         public virtual tblSubCategory tblSubCategory { get; set; }
