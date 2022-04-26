@@ -35,7 +35,7 @@ namespace TeamProjectJoole.Controllers
 
             return View("Products", productList);
         }
-
+        [HttpPost]
         public ActionResult Search(string searchString)
         {
             //string name = "hammer";
