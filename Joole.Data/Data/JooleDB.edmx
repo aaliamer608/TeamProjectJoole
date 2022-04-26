@@ -16,10 +16,9 @@
           <Key>
             <PropertyRef Name="FeedBack_ID" />
           </Key>
-          <Property Name="User_ID" Type="int" Nullable="false" />
-          <Property Name="Product_ID" Type="int" Nullable="false" />
-          <Property Name="FeedBack_Content" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="FeedBack_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FeedBack_Content" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblProducts">
           <Key>
@@ -76,18 +75,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="User_Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK_tblFeedback_tblProducts">
-          <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="1" />
-          <End Role="tblFeedback" Type="Self.tblFeedback" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblProducts">
-              <PropertyRef Name="Product_ID" />
-            </Principal>
-            <Dependent Role="tblFeedback">
-              <PropertyRef Name="Product_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tblFeedback_tblUsers">
           <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
           <End Role="tblFeedback" Type="Self.tblFeedback" Multiplicity="*" />
@@ -109,18 +96,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
             </Principal>
             <Dependent Role="tblProducts">
               <PropertyRef Name="Category_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblProducts_tblSubCategory">
-          <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
-          <End Role="tblProducts" Type="Self.tblProducts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblSubCategory">
-              <PropertyRef Name="SubCategory_ID" />
-            </Principal>
-            <Dependent Role="tblProducts">
-              <PropertyRef Name="SubCategory_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -193,20 +168,12 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
     [tblTypeFilter].[SubCategory_ID] AS [SubCategory_ID]
     FROM [dbo].[tblTypeFilter] AS [tblTypeFilter]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_tblFeedback_tblProducts" Association="Self.FK_tblFeedback_tblProducts">
-            <End Role="tblProducts" EntitySet="tblProducts" />
-            <End Role="tblFeedback" EntitySet="tblFeedback" />
-          </AssociationSet>
           <AssociationSet Name="FK_tblFeedback_tblUsers" Association="Self.FK_tblFeedback_tblUsers">
             <End Role="tblUsers" EntitySet="tblUsers" />
             <End Role="tblFeedback" EntitySet="tblFeedback" />
           </AssociationSet>
           <AssociationSet Name="FK_tblProducts_tblCategory" Association="Self.FK_tblProducts_tblCategory">
             <End Role="tblCategory" EntitySet="tblCategory" />
-            <End Role="tblProducts" EntitySet="tblProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblProducts_tblSubCategory" Association="Self.FK_tblProducts_tblSubCategory">
-            <End Role="tblSubCategory" EntitySet="tblSubCategory" />
             <End Role="tblProducts" EntitySet="tblProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_tblPropertyValue_tblProducts" Association="Self.FK_tblPropertyValue_tblProducts">
@@ -244,11 +211,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Key>
             <PropertyRef Name="FeedBack_ID" />
           </Key>
-          <Property Name="User_ID" Type="Int32" Nullable="false" />
-          <Property Name="Product_ID" Type="Int32" Nullable="false" />
-          <Property Name="FeedBack_Content" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FeedBack_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK_tblFeedback_tblProducts" FromRole="tblFeedback" ToRole="tblProducts" />
+          <Property Name="FeedBack_Content" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblUser" Relationship="Self.FK_tblFeedback_tblUsers" FromRole="tblFeedback" ToRole="tblUsers" />
         </EntityType>
         <EntityType Name="tblProduct">
@@ -261,8 +226,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Property Name="SubCategory_ID" Type="Int32" Nullable="false" />
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblCategory" Relationship="Self.FK_tblProducts_tblCategory" FromRole="tblProducts" ToRole="tblCategory" />
-          <NavigationProperty Name="tblFeedbacks" Relationship="Self.FK_tblFeedback_tblProducts" FromRole="tblProducts" ToRole="tblFeedback" />
-          <NavigationProperty Name="tblSubCategory" Relationship="Self.FK_tblProducts_tblSubCategory" FromRole="tblProducts" ToRole="tblSubCategory" />
           <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK_tblPropertyValue_tblProducts" FromRole="tblProducts" ToRole="tblPropertyValue" />
         </EntityType>
         <EntityType Name="tblProperty">
@@ -281,7 +244,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <Property Name="SubCategory_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblCategory" Relationship="Self.FK_tblSubCategory_ID_tblCategory" FromRole="tblSubCategory" ToRole="tblCategory" />
-          <NavigationProperty Name="tblProducts" Relationship="Self.FK_tblProducts_tblSubCategory" FromRole="tblSubCategory" ToRole="tblProducts" />
           <NavigationProperty Name="tblTypeFilters" Relationship="Self.FK_tblTypeFilter_tblSubCategory_ID" FromRole="tblSubCategory" ToRole="tblTypeFilter" />
         </EntityType>
         <EntityType Name="tblUser">
@@ -338,18 +300,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblFeedback_tblProducts">
-          <End Role="tblProducts" Type="Self.tblProduct" Multiplicity="1" />
-          <End Role="tblFeedback" Type="Self.tblFeedback" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblProducts">
-              <PropertyRef Name="Product_ID" />
-            </Principal>
-            <Dependent Role="tblFeedback">
-              <PropertyRef Name="Product_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tblFeedback_tblUsers">
           <End Role="tblUsers" Type="Self.tblUser" Multiplicity="1" />
           <End Role="tblFeedback" Type="Self.tblFeedback" Multiplicity="*" />
@@ -359,18 +309,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
             </Principal>
             <Dependent Role="tblFeedback">
               <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tblProducts_tblSubCategory">
-          <End Role="tblSubCategory" Type="Self.tblSubCategory" Multiplicity="1" />
-          <End Role="tblProducts" Type="Self.tblProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblSubCategory">
-              <PropertyRef Name="SubCategory_ID" />
-            </Principal>
-            <Dependent Role="tblProducts">
-              <PropertyRef Name="SubCategory_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -427,17 +365,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
             <End Role="tblCategory" EntitySet="tblCategories" />
             <End Role="tblSubCategory" EntitySet="tblSubCategories" />
           </AssociationSet>
-          <AssociationSet Name="FK_tblFeedback_tblProducts" Association="Self.FK_tblFeedback_tblProducts">
-            <End Role="tblProducts" EntitySet="tblProducts" />
-            <End Role="tblFeedback" EntitySet="tblFeedbacks" />
-          </AssociationSet>
           <AssociationSet Name="FK_tblFeedback_tblUsers" Association="Self.FK_tblFeedback_tblUsers">
             <End Role="tblUsers" EntitySet="tblUsers" />
             <End Role="tblFeedback" EntitySet="tblFeedbacks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblProducts_tblSubCategory" Association="Self.FK_tblProducts_tblSubCategory">
-            <End Role="tblSubCategory" EntitySet="tblSubCategories" />
-            <End Role="tblProducts" EntitySet="tblProducts" />
           </AssociationSet>
           <AssociationSet Name="FK_tblPropertyValue_tblProducts" Association="Self.FK_tblPropertyValue_tblProducts">
             <End Role="tblProducts" EntitySet="tblProducts" />
@@ -469,10 +399,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <EntitySetMapping Name="tblFeedbacks">
             <EntityTypeMapping TypeName="JooleDBModel.tblFeedback">
               <MappingFragment StoreEntitySet="tblFeedback">
-                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-                <ScalarProperty Name="FeedBack_Content" ColumnName="FeedBack_Content" />
                 <ScalarProperty Name="FeedBack_ID" ColumnName="FeedBack_ID" />
+                <ScalarProperty Name="FeedBack_Content" ColumnName="FeedBack_Content" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

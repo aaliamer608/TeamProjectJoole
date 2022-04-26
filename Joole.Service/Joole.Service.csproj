@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="CategoryServices.cs" />
     <Compile Include="Models\CategoryDTO.cs" />
+    <Compile Include="Models\FeedbackDTO.cs" />
+    <Compile Include="SubCategoryServices.cs" />
     <Compile Include="TypeFilterServices.cs" />
     <Compile Include="FeedbackServices.cs" />
     <Compile Include="ProductServices.cs" />

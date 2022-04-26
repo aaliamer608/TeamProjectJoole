@@ -9,12 +9,28 @@ using System.Threading.Tasks;
 namespace Joole.Repo.Repositories
 {
     public class UsersRepository : GenericRepository<tblUser>, IUsersRepository
+
     {
         public UsersRepository(JooleDBEntities jooleDBEntities) : base(jooleDBEntities)
         {
         }
 
         //public JooleDBEntities JooleDBEntities { get { return context as JooleDBEntities; } }
+
+        public int GetIdByName(string username)
+        {
+            IEnumerable<tblUser> listUsers = this.GetAll();
+
+
+                foreach (tblUser user in listUsers)
+                {
+                    if (user.User_Name == username)
+                        return user.User_ID;
+                }
+
+            return -1;
+            
+        }
 
     }
 }

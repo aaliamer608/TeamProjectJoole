@@ -77,7 +77,7 @@ namespace TeamProjectJoole.Controllers
         {
             categoryService = new CategoryServices();
             //var result = new CategoryServices().getAllProducts();
-            var result = categoryService.getAllProducts();
+            var result = categoryService.getAllCategories();
 
             List<CategoryInfoVM> categoryList = new List<CategoryInfoVM>();
 
@@ -96,56 +96,7 @@ namespace TeamProjectJoole.Controllers
         }
 
 
-        public ActionResult Feedback()
-        {
-
-            var result_feedback = new FeedbackServices().getAllProducts();
-            List<FeedbackInfoVM> feedbackList = new List<FeedbackInfoVM>();
-
-            var result_users = new UserService().getAllUsers();
-            var result_products = new ProductServices().getAllProducts();
-
-            foreach (var item in result_feedback)
-            {
-                FeedbackInfoVM feedbackVM = new FeedbackInfoVM();
-                feedbackVM.Feedback_ID = item.FeedBack_ID;
-                feedbackVM.Feedback_Content= item.FeedBack_Content;
-
-                var user_id = item.User_ID;
-                string user_name = "N/A";
-                foreach (var user in result_users)
-                {
-                    if (user.UserId == user_id)
-                    {
-                        user_name = user.UserName;
-                    }
-                }
-
-                var product_id = item.Product_ID;
-                string product_name = "N/A";
-                foreach (var product in result_products)
-                {
-                    if (product.Product_ID == product_id)
-                    {
-                        product_name = product.Product_Name;
-                    }
-                }
-
-                feedbackVM.User_Name = user_name;
-                feedbackVM.Product_Name = product_name;
-                
-                
-
-
-
-
-
-
-                feedbackList.Add(feedbackVM);
-            }
-
-            return View("Feedback", feedbackList);
-        }
+        
 
 
         //public ActionResult Types()

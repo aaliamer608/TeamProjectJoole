@@ -23,7 +23,7 @@ namespace Joole.Service
         }
 
 
-        public List<tblTypeFilter> getAllProducts()
+        public List<tblTypeFilter> getAllTypeFilters()
         {
 
 

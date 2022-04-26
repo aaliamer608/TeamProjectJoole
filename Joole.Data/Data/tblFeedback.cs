@@ -14,12 +14,10 @@ namespace Joole.Data.Data
     
     public partial class tblFeedback
     {
-        public int User_ID { get; set; }
-        public int Product_ID { get; set; }
-        public string FeedBack_Content { get; set; }
         public int FeedBack_ID { get; set; }
+        public string FeedBack_Content { get; set; }
+        public int User_ID { get; set; }
     
-        public virtual tblProduct tblProduct { get; set; }
         public virtual tblUser tblUser { get; set; }
     }
 }

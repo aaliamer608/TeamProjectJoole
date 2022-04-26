@@ -27,12 +27,12 @@
                         <li><a>Hello - @User.Identity.Name</a></li>
                         <li>@Html.ActionLink("Add product", "Create", "Product")</li>
                         <li>@Html.ActionLink("Logout", "Logout", "User")</li>
-                        <li>@Html.ActionLink("Feedbacks", "Feedback", "Product")</li>
+                        <li>@Html.ActionLink("Feedbacks", "Index", "Feedback")</li>
                     }
                     else
                     {
                         <li>@Html.ActionLink("Login", "Login", "User")</li>
-                        <li>@Html.ActionLink("Feedbacks", "Feedback", "Product")</li>
+                        <li>@Html.ActionLink("Feedbacks", "Index", "Feedback")</li>
                     }
                 </ul>
             </div>

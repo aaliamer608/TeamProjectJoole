@@ -10,7 +10,7 @@ namespace Joole.Repo.Repositories
     public interface IUsersRepository : IGenericRepository<tblUser>
     {
 
-       
+        int GetIdByName(string username);
 
     }
 

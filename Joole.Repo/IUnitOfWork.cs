@@ -13,6 +13,8 @@ namespace Joole.Repo
         IProductsRepository Products { get; }
         ICategoriesRepository Categories { get; }
         //ITypeFilterRepository TypeFilter { get; }
+        IFeedbackRepository Feedbacks { get; }
+        ISubCategoryRepository SubCategories { get; }
 
         int Complete();
     }

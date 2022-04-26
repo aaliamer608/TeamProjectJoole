@@ -7,7 +7,7 @@ namespace TeamProjectJoole.Models
 {
     public class CategoryInfoVM
     {
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
 
         public string Category_Name { get; set; }
 
