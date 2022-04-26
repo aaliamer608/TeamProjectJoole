@@ -54,13 +54,26 @@ namespace Joole.Service
                     return userDTO;
                 }
             }
-
-
-
             return null;
-
         }
 
+        // returns list of users with User_ID and User_Name only
+        public List<UserDTO> getAllUsers()
+        {
+            IEnumerable<tblUser> users = uow.Users.GetAll();
+            List<UserDTO> result = new List<UserDTO>();
 
+            foreach (tblUser user in users)
+            {
+                UserDTO userDTO = new UserDTO() { 
+                    UserName = user.User_Name,
+                    UserId = user.User_ID
+                };
+                result.Add(userDTO);
+            }
+
+            return result;
+            
+        }
     }
 }

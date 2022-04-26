@@ -71,58 +71,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\JooleDBEntities.Context.cs">
+    <Compile Include="Data\JooleDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDBEntities.Context.tt</DependentUpon>
+      <DependentUpon>JooleDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\JooleDBEntities.cs">
+    <Compile Include="Data\JooleDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\JooleDBEntities.Designer.cs">
+    <Compile Include="Data\JooleDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JooleDBEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sysdiagram.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\tblCategory.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblFeedback.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblProduct.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblProperty.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblPropertyValue.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblSubCategory.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblTypeFilter.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\tblUser.cs">
-      <DependentUpon>JooleDBEntities.tt</DependentUpon>
+      <DependentUpon>JooleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Data\JooleDBEntities.edmx">
+    <EntityDeploy Include="Data\JooleDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>JooleDBEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>JooleDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\JooleDBEntities.edmx.diagram">
-      <DependentUpon>JooleDBEntities.edmx</DependentUpon>
+    <None Include="Data\JooleDB.edmx.diagram">
+      <DependentUpon>JooleDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -130,15 +127,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\JooleDBEntities.Context.tt">
+    <Content Include="Data\JooleDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JooleDBEntities.edmx</DependentUpon>
-      <LastGenOutput>JooleDBEntities.Context.cs</LastGenOutput>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\JooleDBEntities.tt">
+    <Content Include="Data\JooleDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>JooleDBEntities.edmx</DependentUpon>
-      <LastGenOutput>JooleDBEntities.cs</LastGenOutput>
+      <DependentUpon>JooleDB.edmx</DependentUpon>
+      <LastGenOutput>JooleDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="55deb2e0da9e4a039b1906cb3325461b" Name="Diagram1">
-        <EntityTypeShape EntityType="JooleDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblFeedback" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblProduct" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+      <Diagram DiagramId="e3a48d4e56f64812b1dbd7e08b94717d" Name="Diagram1">
+        <EntityTypeShape EntityType="JooleDBModel.tblCategory" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblFeedback" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblProduct" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="JooleDBModel.tblProperty" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblSubCategory" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblUser" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblPropertyValue" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JooleDBModel.tblTypeFilter" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblSubCategory" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblUser" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblPropertyValue" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="JooleDBModel.tblTypeFilter" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="JooleDBModel.FK_tblProducts_tblCategory" ManuallyRouted="false" />
         <AssociationConnector Association="JooleDBModel.FK_tblSubCategory_ID_tblCategory" ManuallyRouted="false" />
         <AssociationConnector Association="JooleDBModel.FK_tblFeedback_tblProducts" ManuallyRouted="false" />
         <AssociationConnector Association="JooleDBModel.FK_tblFeedback_tblUsers" ManuallyRouted="false" />

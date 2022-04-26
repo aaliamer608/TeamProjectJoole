@@ -25,7 +25,6 @@ namespace Joole.Data.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tblCategory> tblCategories { get; set; }
         public virtual DbSet<tblFeedback> tblFeedbacks { get; set; }
         public virtual DbSet<tblProduct> tblProducts { get; set; }

@@ -11,9 +11,10 @@ namespace TeamProjectJoole.Models
 
         public string Feedback_Content{ get; set; }
 
+        public string Product_Name { get; set; }
 
+        public string User_Name { get; set; }
 
-        //public List<ProductInfoVM> productList = new List<ProductInfoVM>();
 
     }
 }

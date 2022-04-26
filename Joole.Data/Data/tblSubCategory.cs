@@ -23,6 +23,7 @@ namespace Joole.Data.Data
     
         public int SubCategory_ID { get; set; }
         public int Category_ID { get; set; }
+        public string SubCategory_Name { get; set; }
     
         public virtual tblCategory tblCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
