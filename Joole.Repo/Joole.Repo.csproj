@@ -73,7 +73,6 @@
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Repositories\SubCategoryRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
-    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

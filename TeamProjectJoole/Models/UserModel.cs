@@ -9,9 +9,9 @@ namespace TeamProjectJoole.Models
 {
     public class UserModel
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //[Key]
-        //public int UserId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        public int? UserId { get; set; }
         [Required(ErrorMessage = "Please provide user name", AllowEmptyStrings = false)]
         public string UserName { get; set; }
 

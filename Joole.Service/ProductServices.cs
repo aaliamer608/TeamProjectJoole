@@ -52,12 +52,9 @@ namespace Joole.Service
 
         public List<tblProduct> getAllProducts()
         {
-            //tblProduct obj = new tblProduct()
-            //{
 
-            //};
             var res = uow.Products.GetAll();
-            uow.Complete();
+            //uow.Complete();
             return (List<tblProduct>)res;
         }
 
@@ -76,7 +73,7 @@ namespace Joole.Service
                 }
                 ).ToList();
 
-            uow.Complete();
+            //uow.Complete();
 
             return result;
         }

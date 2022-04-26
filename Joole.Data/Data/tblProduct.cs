@@ -17,7 +17,6 @@ namespace Joole.Data.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblProduct()
         {
-            this.tblFeedbacks = new HashSet<tblFeedback>();
             this.tblPropertyValues = new HashSet<tblPropertyValue>();
         }
     
@@ -28,9 +27,6 @@ namespace Joole.Data.Data
         public int Category_ID { get; set; }
     
         public virtual tblCategory tblCategory { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblFeedback> tblFeedbacks { get; set; }
-        public virtual tblSubCategory tblSubCategory { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPropertyValue> tblPropertyValues { get; set; }
     }

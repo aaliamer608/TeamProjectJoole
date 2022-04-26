@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TeamProjectJoole.Models.FeedbackInfoVM>
+
+
+
+
+@{
+    ViewBag.Title = "Feedback";
+}
+
+
+<div class="form-horizontal" style="background-color: deepskyblue">
+
+    <h2>Feedbacks</h2>
+
+
+    <table cellpadding="2" cellspacing="0" border="1" style="margin-left:auto; margin-right: auto">
+
+        <tr>
+            <th width="100px" style="text-align: center">No.</th>
+            <th width="100px" style="text-align: center">User name</th>
+            <th width="300px" style="text-align: center">Feedback content</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+                <td>@Html.DisplayFor(Model => item.Feedback_ID)</td>
+                <td>@Html.DisplayFor(Model => item.User_Name)</td>
+                <td>@Html.DisplayFor(Model => item.Feedback_Content)</td>
+            </tr>
+        }
+    </table>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div style="color : red">
+            @Html.ActionLink("Create a feedback", "CreateFeedback", "Feedback", null, new { id = "foo", style = "color: Red" })
+        </div>
+    }
+
+
+</div>

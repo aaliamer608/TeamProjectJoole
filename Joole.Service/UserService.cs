@@ -58,7 +58,7 @@ namespace Joole.Service
         }
 
         // returns list of users with User_ID and User_Name only
-        public List<UserDTO> getAllUsers()
+        public List<UserDTO> getAllUsersDTOs()
         {
             IEnumerable<tblUser> users = uow.Users.GetAll();
             List<UserDTO> result = new List<UserDTO>();
