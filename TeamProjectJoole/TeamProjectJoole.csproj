@@ -184,9 +184,9 @@
     <Content Include="Views\Feedback\Feedback.cshtml" />
     <Content Include="Views\Product\Products.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Feedback\CreateFeedback.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

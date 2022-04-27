@@ -19,6 +19,8 @@ namespace Joole.Repo
             Categories = new CategoriesRepository(_context);
             SubCategories = new SubCategoryRepository(_context);
             Feedbacks = new FeedbackRepository(_context);
+            Properties = new PropertiesRepository(_context);
+            PropertyValues = new PropertyValuesRepository(_context);
             //Types = new TypeFilterRepository(_context);
             //Departments = new DepartmentsRepository(_context);
         }
@@ -35,6 +37,10 @@ namespace Joole.Repo
         public ISubCategoryRepository SubCategories { get; set; }
 
         public IFeedbackRepository Feedbacks { get; set; }
+
+        public IPropertiesRepository Properties { get; set; }
+
+        public IPropertyValuesRepository PropertyValues { get; set; }  
 
 
         // Member variables get their particular types here

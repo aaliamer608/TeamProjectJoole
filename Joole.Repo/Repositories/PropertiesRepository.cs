@@ -16,6 +16,24 @@ namespace Joole.Repo.Repositories
 
         }
 
+        public int AddProperty(tblProperty property)
+        {
+            IEnumerable<tblProperty> listProperty = this.GetAll();
+            int propID = -1;
+
+            foreach (tblProperty prop in listProperty)
+            {
+                if (prop.Property_Name == property.Property_Name)
+                {
+                    propID = prop.Property_ID;
+                    return propID;
+                }
+
+            }
+            // there is no matching property
+            this.Add(property);
+            return propID;
+        }
 
         //public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Joole.Repo.Repositories
 {
-    public interface ICategoriesRepository : IGenericRepository<tblCategory>
+    public interface IPropertyValuesRepository : IGenericRepository<tblPropertyValue>
     {
 
-       int AddCategory(tblCategory category);  
 
     }
 }

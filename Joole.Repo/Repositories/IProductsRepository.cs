@@ -10,7 +10,7 @@ namespace Joole.Repo.Repositories
     public interface IProductsRepository : IGenericRepository<tblProduct>
     {
 
-
+        int AddProduct(tblProduct product);
 
     }
 }

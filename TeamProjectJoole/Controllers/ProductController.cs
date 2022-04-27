@@ -125,22 +125,23 @@ namespace TeamProjectJoole.Controllers
         [HttpPost]
         public ActionResult Create(ProductInfoVM model)
         {
-            var res = new ProductServices();
-            if (ModelState.IsValid)
+            ProductServices productServices = new ProductServices();
+
+            ProductDTO productDTO = new ProductDTO
             {
-                
-                res.productAdd(new ProductDTO
-                {
-                    //ProductId = model.ProductID,
-                    Product_Name = model.Product_Name
-                });
-            }
-            //productsService = new ProductServices();
-            //productsService.productAdd(new ProductDTO
-            //{
-            //    ProductId = model.ProductID,
-            //    Product_Name = model.Product_Name
-            //});
+                Product_Name = model.Product_Name,
+                Category_Name = model.Category_Name,
+                Subcategory_Name = model.Subcategory_Name,
+                prop_name1 = model.prop_name1,
+                prop_name2 = model.prop_name2,
+                prop_val1 = model.prop_val1,
+                prop_val2 = model.prop_val2
+            };
+
+            productServices.ProductAdd(productDTO);
+           
+
+
             return RedirectToAction("Products");
         }
     }

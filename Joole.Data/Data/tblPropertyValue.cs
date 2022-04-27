@@ -14,6 +14,7 @@ namespace Joole.Data.Data
     
     public partial class tblPropertyValue
     {
+        public int PropertyValue_ID { get; set; }
         public int Property_ID { get; set; }
         public int Product_ID { get; set; }
         public int Value { get; set; }

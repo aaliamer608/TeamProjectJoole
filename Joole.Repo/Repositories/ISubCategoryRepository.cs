@@ -9,6 +9,7 @@ namespace Joole.Repo.Repositories
 {
     public interface ISubCategoryRepository : IGenericRepository<tblSubCategory>
     {
+        int AddSubCategory(tblSubCategory subcategory);
 
 
 

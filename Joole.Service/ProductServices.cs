@@ -49,6 +49,62 @@ namespace Joole.Service
             uow.Complete();
         }
 
+        public void ProductAdd(ProductDTO productDTO)
+        {
+            // save tblCategory if new
+            int catID = uow.Categories.AddCategory(new tblCategory { Category_Name = productDTO.Category_Name });
+
+            // save tblSubCategory if new
+            int subCatID = uow.SubCategories.AddSubCategory(new tblSubCategory { Category_ID = catID, 
+                                                                                 SubCategory_Name = productDTO.Subcategory_Name});
+
+            // save tblProduct
+            tblProduct tblProduct = new tblProduct()
+            {
+                Product_Name = productDTO.Product_Name,
+                Product_Image = productDTO.Product_img_url,
+                SubCategory_ID = subCatID,
+                Category_ID = catID
+            };
+            int productID = uow.Products.AddProduct(tblProduct);
+
+            // save tblProperty
+            List<int> propIds = new List<int>();
+            List<string> propNames = new List<string> { productDTO.prop_name1, productDTO.prop_name2 };
+
+            foreach (string propName in propNames)
+            {
+                tblProperty property = new tblProperty()
+                {
+                    Property_Name = propName
+                };
+
+                propIds.Add(uow.Properties.AddProperty(property));
+
+            }
+
+            // save tblPropertyValues
+            List<int> propVals = new List<int> { productDTO.prop_val1, productDTO.prop_val2 };
+
+            for (int i = 0; i < 2; i++)
+            {
+                if (propIds[i] > 0)
+                {
+                    tblPropertyValue tblPropVal = new tblPropertyValue
+                    {
+                        Property_ID = propIds[i],
+                        Product_ID = productID,
+                        Value = propVals[i]
+                    };
+                    uow.PropertyValues.Add(tblPropVal);
+                }
+                    
+                
+            }
+
+            uow.Complete();
+        }
+
 
         public List<tblProduct> getAllProducts()
         {
