@@ -22,10 +22,6 @@ namespace Joole.Repo.Repositories
             return savedProduct.Product_ID;
         }
 
-
-        
-
-        //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

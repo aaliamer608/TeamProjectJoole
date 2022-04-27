@@ -36,9 +36,6 @@ namespace Joole.Repo.Repositories
             this.Add(subCategory);
             return subCatId;
         }
-
-
-        //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

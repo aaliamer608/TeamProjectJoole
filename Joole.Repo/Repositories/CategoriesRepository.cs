@@ -35,8 +35,6 @@ namespace Joole.Repo.Repositories
             return catId;
         }
 
-
-        //public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

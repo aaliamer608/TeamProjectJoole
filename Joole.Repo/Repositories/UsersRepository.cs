@@ -15,8 +15,6 @@ namespace Joole.Repo.Repositories
         {
         }
 
-        //public JooleDBEntities JooleDBEntities { get { return context as JooleDBEntities; } }
-
         public int GetIdByName(string username)
         {
             IEnumerable<tblUser> listUsers = this.GetAll();
