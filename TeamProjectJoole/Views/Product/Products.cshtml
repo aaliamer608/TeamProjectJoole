@@ -6,8 +6,8 @@
 
 <h2 style="padding:10px; color: white;">Joole</h2>
 @*<div class="col col-lg-2" style="text-align:center;padding:20px;">
-    @Html.ActionLink("Feedback", "Feedback")
-</div>*@
+        @Html.ActionLink("Feedback", "Feedback")
+    </div>*@
 
 <style>
     a.pclass {
@@ -34,8 +34,8 @@
 <div class="container-fluid" style="background-color:white">
     <div class="col-md-12">
         @*<div class="col col-lg-2" style="text-align:center;padding:20px;">
-            @Html.ActionLink("Add Product", "Create")
-        </div>*@
+                @Html.ActionLink("Add Product", "Create")
+            </div>*@
         @*Search Display*@
         <div class="col-md-9" style="text-align:center;margin-top:20px;">
             <img width="150" src="" style="float:left" />
@@ -66,3 +66,29 @@
         </form>
     </div>
 </div>
+
+
+<select name="CategoriesDrop">
+    @foreach (var item in Model)
+    {
+        <option>@Html.DisplayFor(modelItem => item.Category_Name)</option>
+    }
+
+</select>
+
+
+
+@*<select name="SubCategoriesDrop">
+    @foreach (var item in Model)
+    {
+        <option>@Html.DisplayFor(modelItem => item.SubCategory_Name)</option>
+    }
+
+</select>*@
+
+
+
+
+
+
+
