@@ -34,7 +34,7 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <div style="color : red">
+        <div>
             @Html.ActionLink("Create a feedback", "CreateFeedback", "Feedback", null, new { id = "foo", style = "color: Red" })
         </div>
     }
