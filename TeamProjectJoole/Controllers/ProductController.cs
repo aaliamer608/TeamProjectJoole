@@ -101,28 +101,6 @@ namespace TeamProjectJoole.Controllers
             return View("Types", categoryEn);
         }
 
-
-        
-
-
-        //public ActionResult Types()
-        //{
-
-        //    var result = new TypeFilterServices().getAllProducts();
-        //    List<TypeFilterInfoVM> typeFilterList = new List<TypeFilterInfoVM>();
-
-        //    foreach (var item in result)
-        //    {
-        //        TypeFilterInfoVM typeFilterVM = new TypeFilterInfoVM();
-        //        typeFilterVM.Property_ID = (int)item.Property_ID;
-        //        typeFilterVM.Type_name= item.Type_name;
-
-        //        typeFilterList.Add(typeFilterVM);
-        //    }
-
-        //    return View("Types", typeFilterList);
-        //}
-
         public ActionResult Create()
         {
             return View();
