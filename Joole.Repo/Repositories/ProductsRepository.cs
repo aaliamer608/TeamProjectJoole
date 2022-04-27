@@ -16,14 +16,14 @@ namespace Joole.Repo.Repositories
 
         }
 
-        public IEnumerable<tblProduct> GetProductsBySubCategoryID(int SubId)
+        public int AddProduct(tblProduct product)
         {
-
-
-
-            throw new NotImplementedException();  // customs logic here
+            tblProduct savedProduct = this.context.Set<tblProduct>().Add(product);
+            return savedProduct.Product_ID;
         }
 
+
+        
 
         //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }

@@ -29,9 +29,9 @@ namespace Joole.Data.Data
         public virtual DbSet<tblFeedback> tblFeedbacks { get; set; }
         public virtual DbSet<tblProduct> tblProducts { get; set; }
         public virtual DbSet<tblProperty> tblProperties { get; set; }
+        public virtual DbSet<tblPropertyValue> tblPropertyValues { get; set; }
         public virtual DbSet<tblSubCategory> tblSubCategories { get; set; }
         public virtual DbSet<tblUser> tblUsers { get; set; }
-        public virtual DbSet<tblPropertyValue> tblPropertyValues { get; set; }
         public virtual DbSet<tblTypeFilter> tblTypeFilters { get; set; }
     }
 }

@@ -16,8 +16,29 @@ namespace Joole.Repo.Repositories
 
         }
 
+        public int AddSubCategory(tblSubCategory subCategory)
+        {
+            IEnumerable<tblSubCategory> tblSubCategories = this.GetAll();
+            int subCatId = -1;
 
-    //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
+            foreach (tblSubCategory cat in tblSubCategories)
+            {
+                if (cat.Category_ID == subCategory.Category_ID
+                    && cat.SubCategory_Name == subCategory.SubCategory_Name)
+                {
+                    subCatId = cat.Category_ID;
+                    return subCatId;
+                }
+
+            }
+
+            // there is no matching subcategory
+            this.Add(subCategory);
+            return subCatId;
+        }
+
+
+        //    public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

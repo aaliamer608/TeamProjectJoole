@@ -16,6 +16,9 @@ namespace Joole.Repo
         IFeedbackRepository Feedbacks { get; }
         ISubCategoryRepository SubCategories { get; }
 
+        IPropertiesRepository Properties { get; }
+
+        IPropertyValuesRepository PropertyValues { get; }
         int Complete();
     }
 }

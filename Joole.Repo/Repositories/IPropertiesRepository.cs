@@ -11,6 +11,6 @@ namespace Joole.Repo.Repositories
     {
 
 
-
+        int AddProperty(tblProperty property);
     }
 }

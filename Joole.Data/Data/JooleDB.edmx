@@ -37,14 +37,11 @@
           <Property Name="Property_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Property_Name" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'JooleDB.dbo.tblPropertyValue' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblPropertyValue">
           <Key>
-            <PropertyRef Name="Property_ID" />
-            <PropertyRef Name="Product_ID" />
-            <PropertyRef Name="Value" />
+            <PropertyRef Name="PropertyValue_ID" />
           </Key>
+          <Property Name="PropertyValue_ID" Type="int" Nullable="false" />
           <Property Name="Property_ID" Type="int" Nullable="false" />
           <Property Name="Product_ID" Type="int" Nullable="false" />
           <Property Name="Value" Type="int" Nullable="false" />
@@ -152,15 +149,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <EntitySet Name="tblFeedback" EntityType="Self.tblFeedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProducts" EntityType="Self.tblProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblProperty" EntityType="Self.tblProperty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPropertyValue" EntityType="Self.tblPropertyValue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblSubCategory" EntityType="Self.tblSubCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tblPropertyValue" EntityType="Self.tblPropertyValue" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tblPropertyValue].[Property_ID] AS [Property_ID], 
-    [tblPropertyValue].[Product_ID] AS [Product_ID], 
-    [tblPropertyValue].[Value] AS [Value]
-    FROM [dbo].[tblPropertyValue] AS [tblPropertyValue]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tblTypeFilter" EntityType="Self.tblTypeFilter" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [tblTypeFilter].[Property_ID] AS [Property_ID], 
@@ -236,6 +227,17 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Property Name="Property_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblPropertyValues" Relationship="Self.FK_tblPropertyValue_tblProperty" FromRole="tblProperty" ToRole="tblPropertyValue" />
         </EntityType>
+        <EntityType Name="tblPropertyValue">
+          <Key>
+            <PropertyRef Name="PropertyValue_ID" />
+          </Key>
+          <Property Name="PropertyValue_ID" Type="Int32" Nullable="false" />
+          <Property Name="Property_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblProduct" Relationship="Self.FK_tblPropertyValue_tblProducts" FromRole="tblPropertyValue" ToRole="tblProducts" />
+          <NavigationProperty Name="tblProperty" Relationship="Self.FK_tblPropertyValue_tblProperty" FromRole="tblPropertyValue" ToRole="tblProperty" />
+        </EntityType>
         <EntityType Name="tblSubCategory">
           <Key>
             <PropertyRef Name="SubCategory_ID" />
@@ -254,18 +256,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblFeedbacks" Relationship="Self.FK_tblFeedback_tblUsers" FromRole="tblUsers" ToRole="tblFeedback" />
-        </EntityType>
-        <EntityType Name="tblPropertyValue">
-          <Key>
-            <PropertyRef Name="Property_ID" />
-            <PropertyRef Name="Product_ID" />
-            <PropertyRef Name="Value" />
-          </Key>
-          <Property Name="Property_ID" Type="Int32" Nullable="false" />
-          <Property Name="Product_ID" Type="Int32" Nullable="false" />
-          <Property Name="Value" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tblProduct" Relationship="Self.FK_tblPropertyValue_tblProducts" FromRole="tblPropertyValue" ToRole="tblProducts" />
-          <NavigationProperty Name="tblProperty" Relationship="Self.FK_tblPropertyValue_tblProperty" FromRole="tblPropertyValue" ToRole="tblProperty" />
         </EntityType>
         <EntityType Name="tblTypeFilter">
           <Key>
@@ -353,9 +343,9 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
           <EntitySet Name="tblFeedbacks" EntityType="Self.tblFeedback" />
           <EntitySet Name="tblProducts" EntityType="Self.tblProduct" />
           <EntitySet Name="tblProperties" EntityType="Self.tblProperty" />
+          <EntitySet Name="tblPropertyValues" EntityType="Self.tblPropertyValue" />
           <EntitySet Name="tblSubCategories" EntityType="Self.tblSubCategory" />
           <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
-          <EntitySet Name="tblPropertyValues" EntityType="Self.tblPropertyValue" />
           <EntitySet Name="tblTypeFilters" EntityType="Self.tblTypeFilter" />
           <AssociationSet Name="FK_tblProducts_tblCategory" Association="Self.FK_tblProducts_tblCategory">
             <End Role="tblCategory" EntitySet="tblCategories" />
@@ -424,6 +414,16 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblPropertyValues">
+            <EntityTypeMapping TypeName="JooleDBModel.tblPropertyValue">
+              <MappingFragment StoreEntitySet="tblPropertyValue">
+                <ScalarProperty Name="PropertyValue_ID" ColumnName="PropertyValue_ID" />
+                <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblSubCategories">
             <EntityTypeMapping TypeName="JooleDBModel.tblSubCategory">
               <MappingFragment StoreEntitySet="tblSubCategory">
@@ -439,15 +439,6 @@ warning 6002: The table/view 'JooleDB.dbo.tblTypeFilter' does not have a primary
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
                 <ScalarProperty Name="User_Name" ColumnName="User_Name" />
                 <ScalarProperty Name="User_Password" ColumnName="User_Password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblPropertyValues">
-            <EntityTypeMapping TypeName="JooleDBModel.tblPropertyValue">
-              <MappingFragment StoreEntitySet="tblPropertyValue">
-                <ScalarProperty Name="Property_ID" ColumnName="Property_ID" />
-                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-                <ScalarProperty Name="Value" ColumnName="Value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

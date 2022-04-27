@@ -54,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\IPropertyValuesRepository.cs" />
     <Compile Include="Repositories\PropertiesRepository.cs" />
     <Compile Include="Repositories\CategoriesRepository.cs" />
+    <Compile Include="Repositories\PropertyValuesRepository.cs" />
     <Compile Include="Repositories\TypeFilterRepository.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
     <Compile Include="Repositories\IPropertiesRepository.cs" />
