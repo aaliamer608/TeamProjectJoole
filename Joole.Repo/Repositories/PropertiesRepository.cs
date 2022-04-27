@@ -34,8 +34,6 @@ namespace Joole.Repo.Repositories
             this.Add(property);
             return propID;
         }
-
-        //public JooleDBEntities JooleDBEntities { get { return Context as JooleDBEntities; } }
     }
 
 }

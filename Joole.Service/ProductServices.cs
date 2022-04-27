@@ -16,40 +16,15 @@ namespace Joole.Service
         public UnitOfWork uow { get; set; }
         public JooleDBEntities _context;
 
-
-        //GenericRepository<tblProduct> genRepo;
         public ProductServices()
         {
 
             this._context = new JooleDBEntities();
             this.uow = new UnitOfWork(_context);
-            //_context = new JooleDBEntities();
-
-            //genRepo = new GenericRepository<tblProduct>(_context);
         }
 
 
-        //public List<tblCategory> getAllProducts()
-        //{
-
-
-        //    //return genRepo.GetAll().ToList();
-        //}
-
-
-        public void productAdd(ProductDTO productDTO)
-        {
-            tblProduct obj = new tblProduct()
-            {
-                //Product_ID = productDTO.ProductId,
-                Product_Name = productDTO.Product_Name
-
-            };
-            uow.Products.Add(obj);
-            uow.Complete();
-        }
-
-        public void ProductAdd(ProductDTO productDTO)
+        public int ProductAdd(ProductDTO productDTO)
         {
             // save tblCategory if new
             int catID = uow.Categories.AddCategory(new tblCategory { Category_Name = productDTO.Category_Name });
@@ -69,6 +44,7 @@ namespace Joole.Service
             int productID = uow.Products.AddProduct(tblProduct);
 
             // save tblProperty
+            // TODO: make it like code above
             List<int> propIds = new List<int>();
             List<string> propNames = new List<string> { productDTO.prop_name1, productDTO.prop_name2 };
 
@@ -103,6 +79,8 @@ namespace Joole.Service
             }
 
             uow.Complete();
+
+            return productID;
         }
 
 
@@ -134,18 +112,5 @@ namespace Joole.Service
             return result;
         }
 
-        //public List<ProductDTO> getProductByID(int id)
-        //{
-        //    var products = uow.Products.GetAll();
-
-        //    var result = (
-        //        from p in products
-        //        where p.Product_ID == id
-        //        select products
-        //        ).ToList();
-        //    var res = uow.Products.GetById(id);
-        //    //uow.Complete();
-        //    return res;
-        //}
     }
 }

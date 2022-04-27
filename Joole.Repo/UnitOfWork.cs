@@ -21,8 +21,6 @@ namespace Joole.Repo
             Feedbacks = new FeedbackRepository(_context);
             Properties = new PropertiesRepository(_context);
             PropertyValues = new PropertyValuesRepository(_context);
-            //Types = new TypeFilterRepository(_context);
-            //Departments = new DepartmentsRepository(_context);
         }
 
 
@@ -43,12 +41,6 @@ namespace Joole.Repo
         public IPropertyValuesRepository PropertyValues { get; set; }  
 
 
-        // Member variables get their particular types here
-        //public UnitOfWork(JooleDBEntities context)
-        //{
-        //    this.context = context;
-        //    this.Users = new UsersRepository(context);
-        //}
 
         public int Complete()
         {

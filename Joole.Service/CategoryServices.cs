@@ -26,7 +26,6 @@ namespace Joole.Service
         public List<tblCategory> getAllCategories()
         {
             var res = uow.Categories.GetAll();
-            //uow.Complete();
             return (List<tblCategory>)res;
         }
 
