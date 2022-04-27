@@ -1,4 +1,5 @@
 ﻿using Joole.Data.Data;
+using Joole.Repo;
 using Joole.Repo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,15 @@ namespace Joole.Service
 
     public class TypeFilterServices
     {
-        JooleDBEntities _context;
-        GenericRepository<tblTypeFilter> genRepo;
+        public UnitOfWork uow { get; set; }
+        public JooleDBEntities jooleDBEntities;
+
         public TypeFilterServices()
         {
-            _context = new JooleDBEntities();
-
-            genRepo = new GenericRepository<tblTypeFilter>(_context);
+            this.jooleDBEntities = new JooleDBEntities();
+            this.uow = new UnitOfWork(jooleDBEntities);
 
         }
 
-
-        public List<tblTypeFilter> getAllTypeFilters()
-        {
-
-
-            return genRepo.GetAll().ToList();
-        }
     }
 }
